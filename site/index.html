@@ -30,10 +30,12 @@
   });
 
   function sendMessage() {
-    socket.emit('chatRes', {
-      text: document.getElementById("new_item").value
-    })
+    var _text = document.getElementById("new_item").value
+    if (_text){
+      socket.emit('chatRes', {
+        text: _text
+      })
+    }
   }
-
 </script>
 </html>

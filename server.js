@@ -42,7 +42,6 @@ socketIO.on('connection', function (socket) {
 
   socket.on('chatRes', function (data) {
     socketIO.emit('newChat', {text: data.text})
-    console.log(data.text);
   })
 
   socket.on('disconnect', function(){
