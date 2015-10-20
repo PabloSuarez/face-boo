@@ -1,0 +1,36 @@
+{
+  "name": "face-boo",
+  "version": "1.0.0",
+  "description": "realtime chat like facebook messenger, use socket.io, express.js and more",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloSuarez/face-boo.git"
+  },
+  "keywords": [
+    "realtime",
+    "socket.io",
+    "express.js",
+    "node.js",
+    "pablo",
+    "suarez"
+  ],
+  "author": "Pablo Suarez hostsuarezpablo@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PabloSuarez/face-boo/issues"
+  },
+  "homepage": "https://github.com/PabloSuarez/face-boo#readme",
+  "devDependencies": {
+    "express": "^4.13.3"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "finalhandler": "^0.4.0",
+    "router": "^1.1.3",
+    "socket.io": "^1.3.7"
+  }
+}

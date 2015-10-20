@@ -1,0 +1,39 @@
+body {
+  background-color: #0E5472;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #000;
+  box-shadow: 1px 1px 5px #000;
+  border-radius: 4px;
+  line-height: 2.8rem;
+  font-size: 1rem;
+  color: #0E5460;
+  text-align: center;
+}
+
+.list {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px white,
+              4px 6px 20px #0E5472;
+  min-height: 500px;
+}
+
+.accions {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.message-new-input {
+  padding: 5px 0;
+  border-radius: 5px;
+  border: 0;
+  width: 95%;
+  text-align: center;
+  box-shadow: 1px 1px 2px white,
+              4px 6px 20px #0E5472;
+}
