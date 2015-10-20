@@ -9,13 +9,31 @@
 <body>
   <header><h1>Welcome to FACE-BOO</h1></header>
   <section>
-    <ul class="list">
+    <ul class="list" id="list_items">
       <li>Lista item chat</li>
     </ul>
     <div class="accions">
-      <input class="message-new-input" type="text" name="message-body" placeholder="type message" value="">
-      <button class="message-send" type="button" name="send">send</button>
+      <input id="new_item" class="message-new-input" type="text" name="message-body" placeholder="type message" value="">
+      <button onClick="sendMessage();" class="message-send" type="button" name="send">send</button>
     </div>
   </section>
 </body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:8080')
+
+  socket.on('newChat', function (data) {
+    var new_node = document.createElement("LI")
+    var text_node = document.createTextNode(data.text)
+    new_node.appendChild(text_node)
+    document.getElementById("list_items").appendChild(new_node)
+  });
+
+  function sendMessage() {
+    socket.emit('chatRes', {
+      text: document.getElementById("new_item").value
+    })
+  }
+
+</script>
 </html>

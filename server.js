@@ -32,15 +32,21 @@ var server = http.createServer((req, res) => {
   router(req, res, finalhandler(req, res))
 })
 
-server.listen(3000, function (data) {
-  console.log('Server listen port 3000')
+server.listen(8080, function (data) {
+  console.log('Server listen port 8080')
 })
 
 var socketIO = require('socket.io')(server)
 
 socketIO.on('connection', function (socket) {
-  socket.emit('chatRes', {hello: 'hello world'})
-  socket.on('chatReq', function (data) {
-    console.log('user say:'+data);
+
+  socket.on('chatRes', function (data) {
+    socketIO.emit('newChat', {text: data.text})
+    console.log(data.text);
   })
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
 })
